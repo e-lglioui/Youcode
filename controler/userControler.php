@@ -1,6 +1,5 @@
 <?php
 include_once __DIR__ ."/../modal/User.php";
-session_start();
 class userControler{
 
 public function regester($nom,$prenom,$email,$mot_pass){
@@ -8,6 +7,7 @@ public function regester($nom,$prenom,$email,$mot_pass){
     $prenom=$this->validation($prenom);
     $email=$this->validation($email);
     $mot_pass = password_hash($mot_pass, PASSWORD_DEFAULT);
+    $connexion = new Connexion();
     $user = new User($nom,$prenom,$email,$mot_pass);
     $user->creatAcount();
 }
@@ -22,3 +22,4 @@ public function validation($data)
     return $data;
 }
 }
+?>

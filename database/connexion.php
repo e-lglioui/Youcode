@@ -15,4 +15,11 @@ public function __construct()
             die("Connection failed: " . $e->getMessage());
         }
     }
+
+    
+    public function getConnection()
+    {
+        return $this->pdo;
+    }
 }
+?>

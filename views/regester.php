@@ -1,19 +1,16 @@
 <?php
-
 require "navbar.php";
 include '../controler/userControler.php';
-$controler=new userControler();
-if (isset($POST['submit'])){
-    $nom=$POST['nom'];
-    $prenom=$POST['prenom'];
-    $email=$POST['email'];
-    $mot_pass=$POST['motpass'];
-    
-    $controler->regester($nom,$prenom,$email,$mot_pass);
+$controler = new userControler();
+
+if (isset($_POST['submit'])) {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $email = $_POST['email'];
+    $mot_pass = $_POST['motpass'];
+
+    $controler->regester($nom, $prenom, $email, $mot_pass);
 }
-
-
-
 ?>
 
 
