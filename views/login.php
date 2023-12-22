@@ -1,5 +1,13 @@
 <?php
-require "navbar.php"
+require "navbar.php";
+include '../controler/userControler.php';
+$controler = new userControler();
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $mot_pass = $_POST['motpass'];
+    $controler->login($email,$mot_pass);
+}
 ?>
 
 
@@ -21,7 +29,7 @@ require "navbar.php"
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" name="motpass" />
+                                <input type="password" id="typePasswordX" class="form-control form-control-lg" name="motpass" />
                                     <label class="form-label" for="typePasswordX" >Password</label>
                                 </div>
 

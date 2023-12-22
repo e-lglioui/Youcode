@@ -12,7 +12,14 @@ public function regester($nom,$prenom,$email,$mot_pass){
     $user->creatAcount();
 }
 
+public function login($email,$password){
+    $email=$this->validation($email);
+    $password=$this->validation($password);
+    $connexion = new Connexion();
+    $user = new User('','',$email,$password);
+    $user->findAcount($email,$password);
 
+}
 
 public function validation($data)
 {
